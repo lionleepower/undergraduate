@@ -59,6 +59,70 @@ Contains coursework for COMP285, including two major assignments:
 - Aim: To apply software development tools across the lifecycle, with emphasis on automated testing, continuous integration, and test-driven programming.  
 
 ---
+#COMP390 Final Year Project
+# Exploring Value Function Factorisation in Multi-Agent Actor-Critic Methods
+
+## Project Overview
+This repository contains the implementation and experimental results of my Honours Year Project (COMP390), which investigates the role of value function factorisation in Multi-Agent Reinforcement Learning (MARL), particularly in cooperative settings.
+
+The project focuses on evaluating how different factorisation approaches impact learning efficiency, stability, and coordination in multi-agent actor-critic frameworks.
+
+## Compliance Statement
+- All data used in this project was collected via public APIs from social media platforms.
+- The data is anonymous and human-related, but no human participants were directly involved in data collection or experimentation.
+
+## Objectives
+The main objective is to assess the benefits and limitations of applying value function factorisation in multi-agent actor-critic methods and to understand how such approaches affect performance in cooperative environments.
+
+## Environments
+Experiments were conducted in two representative environments:
+- **Matrix Games**: Custom simulations to model strategic interactions.
+- **Predator-Prey (PettingZoo)**: A cooperative pursuit–evasion scenario with partial observability.
+
+## Algorithms Evaluated
+1. **MAPPO (Multi-Agent Proximal Policy Optimization)**
+   - Policy-gradient based actor-critic method.
+   - Centralized training with decentralized execution.
+   - High flexibility but sensitive to hyperparameters.
+
+2. **VDN (Value Decomposition Networks)**
+   - Linear additive value factorisation.
+   - Stable and efficient in simple cooperative tasks.
+   - Limited in representing complex agent interactions.
+
+3. **QMIX**
+   - Monotonic mixing network for nonlinear factorisation.
+   - More expressive than VDN but structurally constrained.
+
+## Key Results
+- **Matrix Games**:
+  - VDN and QMIX outperform MAPPO in cooperative coordination tasks.
+  - MAPPO excels in non-monotonic (anti-coordination) scenarios where decomposition struggles.
+
+- **Predator-Prey**:
+  - VDN achieves the best convergence and stability.
+  - MAPPO shows potential but is unstable under sparse rewards.
+  - QMIX fails to learn effectively due to architectural limits.
+
+## Limitations
+- Training time was reduced (50k steps) due to computational constraints.
+- Limited number of experiment runs affects statistical significance.
+
+## Future Work
+- Extend training duration for deeper convergence.
+- Conduct multiple runs for stronger statistical robustness.
+- Refine reward structures and exploration strategies.
+- Explore advanced critics and more expressive mixing networks.
+
+## Implementation
+- All implementations are in **Python** using **PyTorch**.
+- Based on the **PyMARL/ePyMARL** framework with custom extensions.
+
+---
+
+Author: **Leyan Li**  
+
+
 
 ## Notes
 - These projects are archived for reference purposes only.  
