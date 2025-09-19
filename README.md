@@ -1,5 +1,3 @@
-# undergraduate
-Some works at undergraduate
 # Undergraduate Coursework Archive
 
 This repository contains a collection of coursework projects completed during my undergraduate studies in Computer Science at the University of Liverpool.  
